@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LandingPage from '../src/containers/LandingPage'
+import store from './store'
+import {Provider} from 'react-redux'
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <Route path='/' exact component={LandingPage}/>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Route path='/' exact component={LandingPage}/>
+        </Router>
+      </Provider>
     )
   }
 }

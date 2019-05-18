@@ -12,7 +12,7 @@ class Login extends Component {
     super(props)
 
     this.state = {
-      email:'',
+      username:'',
       password:''
     }
   }
@@ -22,9 +22,9 @@ class Login extends Component {
   onSubmit = e => {
     e.preventDefault()
 
-    this.props.signIn(this.state.email, this.state.password)
+    this.props.signIn(this.state.username, this.state.password)
     this.setState({
-      email:'',
+      username:'',
       password:''
     })
   }
@@ -37,9 +37,9 @@ class Login extends Component {
             <Label>Email</Label>
             <Input 
             onChange={this.onChange}
-            value={this.state.email}
+            value={this.state.username}
             type='text'
-            name='email'
+            name='username'
             placeholder='Your Email'
             />
           </FormGroup>
@@ -48,7 +48,7 @@ class Login extends Component {
             <Input
             onChange={this.onChange}
             value={this.state.password}
-            type='text'
+            type='password'
             name='password'
             placeholder='Your Password'
             />
@@ -62,15 +62,11 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signIn: (email, password) => {
-      dispatch(signIn(email, password))
+    signIn: (username, password) => {
+      dispatch(signIn(username, password))
     }
   }
 }
 
-export default withRouter(
-  connect(
-    mapDispatchToProps
-    )
-  (Login)
-  )
+export default connect(null,mapDispatchToProps)(Login)
+  

@@ -8,12 +8,12 @@ export default class LandingPage extends Component {
     return (
       <div >
         <Row >
-          <Col xs={1} sm={3} md={4}>
+          <Col xs={1} sm={2} md={4}>
           </Col>
-          <Col xs={10} sm={6} md={4} className='align-items-center' >
+          <Col xs={10} sm={8} md={4} className='align-items-center' >
           <Login/>
           </Col>
-          <Col xs={1} sm={3} md={4}>
+          <Col xs={1} sm={2} md={4}>
           </Col>
         </Row>
         

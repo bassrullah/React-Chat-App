@@ -4,23 +4,23 @@ import {USERSIGN_IN} from './type'
 
 const url = "https://relaonebinar.herokuapp.com/api"
 
-export const signIn = (email, password) => {
+export const signIn = (username, password) => {
   return dispatch => {
     axios ({
-      url: `${url}/api/user/login`,
+      url: `${url}/member/login`,
       method: 'post',
       data: {
-          email,
+          username,
           password
       }
     })
       .then(res => {
+        console.log(res)
         dispatch({
           type: USERSIGN_IN,
-          token: res.data.token,
-          role: res.data.data.role
+          token: res.data.token
         })
-        history.push('/user/dashboard')
+        history.push('/chatapp')
       })
       .catch(err => {
         console.log(err)

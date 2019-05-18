@@ -1,12 +1,22 @@
 import React, { Component } from 'react'
 import Login from '../components/Login.js'
-
+import {Row, Col} from 'reactstrap'
+import '../assets/css/style.scss'
 
 export default class LandingPage extends Component {
   render() {
     return (
-      <div>
-        <Login/>
+      <div >
+        <Row >
+          <Col sm={4}>
+          </Col>
+          <Col sm={4} className='align-items-center' >
+          <Login/>
+          </Col>
+          <Col sm={4}>
+          </Col>
+        </Row>
+        
       </div>
     )
   }
